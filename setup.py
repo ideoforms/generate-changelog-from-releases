@@ -7,5 +7,6 @@ setup(
     version = '0.0.1',
     author = 'Daniel Jones',
     author_email = 'dan-code@erase.net',
-    scripts = [ 'generate-changelog-from-releases.py' ]
+    scripts = [ 'generate-changelog-from-releases.py' ],
+    install_requires = [ 'pygithub' ]
 )
