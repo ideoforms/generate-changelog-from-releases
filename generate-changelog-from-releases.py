@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+Generate CHANGELOG from GitHub releases
+
+To generate a token: 
+https://github.com/settings/tokens/new?description=Generate%20Changelog%20From%20Releases
+"""
+
 import os
 import re
 import sys
@@ -7,13 +14,8 @@ import github
 import argparse
 import subprocess
 
-#-------------------------------------------------------------------------------
-# To generate a token: 
-# https://github.com/settings/tokens/new?description=Generate%20Changelog%20From%20Releases
-#-------------------------------------------------------------------------------
-
 parser = argparse.ArgumentParser(description="Generate a CHANGELOG.md from GitHub releases")
-parser.add_argument("--token", "-t", type=str, help="GitHub token", default=os.getenv("GITHUB_RELEASES_TO_CHANGELOG_TOKEN"))
+parser.add_argument("--token", "-t", type=str, help="GitHub token", default=os.getenv("GENERATE_CHANGELOG_FROM_RELEASES_TOKEN"))
 parser.add_argument("--output-file", "-o", type=str, help="Output path. For stdout, use -o -", default="CHANGELOG.md")
 parser.add_argument("--force", "-f", action="store_true", help="Force overwriting file")
 args = parser.parse_args()
