@@ -68,6 +68,7 @@ output_fd.write("# Changelog\n\n")
 
 for release in releases:
     output_fd.write("## [%s](%s) (%s)\n\n" % (release.title, release.html_url, release.created_at.strftime("%Y-%m-%d")))
-    output_fd.write("%s\n\n" % release.body)
+    body = release.body.replace("\r", "")
+    output_fd.write("%s\n\n" % body)
 
 output_fd.close()
